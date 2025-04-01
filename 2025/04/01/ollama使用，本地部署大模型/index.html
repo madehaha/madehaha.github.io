@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>ollama使用，本地部署大模型 | Bubulu Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="ollama命令模型拉取命令ollama pull &lt;model_name&gt;12345# 作用 从 Ollama 模型库中下载指定名称的模型到本地。 # 示例 ollama pull llama2 # 解释 此命令会将名为 llama2 的模型下载到本地，之后就可以在本地使用该模型进行交互。 模型运行命令ollama run &lt;model_name&gt;123456# 作用启动">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ollama使用，本地部署大模型">
 <meta property="og:url" content="http://example.com/2025/04/01/ollama%E4%BD%BF%E7%94%A8%EF%BC%8C%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Bubulu Blog">
+<meta property="og:description" content="ollama命令模型拉取命令ollama pull &lt;model_name&gt;12345# 作用 从 Ollama 模型库中下载指定名称的模型到本地。 # 示例 ollama pull llama2 # 解释 此命令会将名为 llama2 的模型下载到本地，之后就可以在本地使用该模型进行交互。 模型运行命令ollama run &lt;model_name&gt;123456# 作用启动">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-01T02:39:41.000Z">
-<meta property="article:modified_time" content="2025-04-01T02:39:41.074Z">
+<meta property="article:modified_time" content="2025-04-01T03:02:27.930Z">
 <meta property="article:author" content="Bubulu">
+<meta property="article:tag" content="大模型">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Bubulu Blog" type="application/atom+xml">
@@ -172,7 +175,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="ollama命令"><a href="#ollama命令" class="headerlink" title="ollama命令"></a>ollama命令</h1><h2 id="模型拉取命令"><a href="#模型拉取命令" class="headerlink" title="模型拉取命令"></a>模型拉取命令</h2><h3 id="ollama-pull"><a href="#ollama-pull" class="headerlink" title="ollama pull &lt;model_name&gt;"></a><code>ollama pull &lt;model_name&gt;</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 作用 </span><br><span class="line">从 Ollama 模型库中下载指定名称的模型到本地。 </span><br><span class="line"># 示例 </span><br><span class="line">ollama pull llama2 </span><br><span class="line"># 解释 此命令会将名为 llama2 的模型下载到本地，之后就可以在本地使用该模型进行交互。</span><br></pre></td></tr></table></figure>
+<h2 id="模型运行命令"><a href="#模型运行命令" class="headerlink" title="模型运行命令"></a>模型运行命令</h2><h3 id="ollama-run"><a href="#ollama-run" class="headerlink" title="ollama run &lt;model_name&gt;"></a><code>ollama run &lt;model_name&gt;</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 作用</span><br><span class="line">启动指定模型并进入交互模式，用户可以在命令行中输入问题或指令，模型会生成相应的回答。</span><br><span class="line"># 示例</span><br><span class="line">ollama run llama2</span><br><span class="line"># 解释</span><br><span class="line">运行 llama2 模型，随后可以在命令行输入内容与模型进行对话。</span><br></pre></td></tr></table></figure>
+<h3 id="ollama-run-n-t"><a href="#ollama-run-n-t" class="headerlink" title="ollama run &lt;model_name&gt; -n &lt;number&gt; -t &lt;temperature&gt;"></a><code>ollama run &lt;model_name&gt; -n &lt;number&gt; -t &lt;temperature&gt;</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 作用</span><br><span class="line">运行指定模型，并可以指定一些参数来调整模型的行为。</span><br><span class="line"># 参数说明</span><br><span class="line">- -n &lt;number&gt;：设置生成文本的最大长度。</span><br><span class="line">- -t &lt;temperature&gt;：设置生成文本的随机性，值越大生成的文本越随机。</span><br><span class="line"># 示例</span><br><span class="line">ollama run llama2 -n 500 -t 0.7</span><br><span class="line"># 解释</span><br><span class="line">运行 llama2 模型，将生成文本的最大长度设置为 500，温度设置为 0.7。</span><br></pre></td></tr></table></figure>
+<h2 id="服务启动命令"><a href="#服务启动命令" class="headerlink" title="服务启动命令"></a>服务启动命令</h2><h3 id="ollama-serve"><a href="#ollama-serve" class="headerlink" title="ollama serve"></a><code>ollama serve</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 作用</span><br><span class="line">启动 Ollama 服务，使其在默认端口（11434）监听，以便通过 API 或者客户端工具来和 Ollama 进行交互。</span><br><span class="line"># 示例</span><br><span class="line">ollama serve</span><br><span class="line"># 解释</span><br><span class="line">启动服务后，就可以使用 API 向该服务发送请求，获取模型生成的内容。</span><br><span class="line"># tip</span><br><span class="line">注册为后台服务，开机自启</span><br><span class="line">sc create OllamaService binPath= &quot;C:\Path\To\ollama serve&quot; start= auto</span><br><span class="line">然后启动</span><br><span class="line">sc start OllamaService</span><br></pre></td></tr></table></figure>
+<h3 id="ollama-serve-port"><a href="#ollama-serve-port" class="headerlink" title="ollama serve --port &lt;port_number&gt;"></a><code>ollama serve --port &lt;port_number&gt;</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 作用</span><br><span class="line">启动 Ollama 服务，并指定服务监听的端口号。</span><br><span class="line"># 示例</span><br><span class="line">ollama serve --port 8080</span><br><span class="line"># 解释</span><br><span class="line">启动服务并让其在 8080 端口监听。</span><br></pre></td></tr></table></figure>
+<h2 id="模型信息查看命令"><a href="#模型信息查看命令" class="headerlink" title="模型信息查看命令"></a>模型信息查看命令</h2><h3 id="ollama-show"><a href="#ollama-show" class="headerlink" title="ollama show &lt;model_name&gt;"></a><code>ollama show &lt;model_name&gt;</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 作用</span><br><span class="line">显示指定模型的详细信息，可能包含模型的参数大小等内容。</span><br><span class="line"># 示例</span><br><span class="line">ollama show llama2</span><br><span class="line"># 解释</span><br><span class="line">查看 llama2 模型的详细信息。</span><br></pre></td></tr></table></figure>
+<h2 id="API-请求示例"><a href="#API-请求示例" class="headerlink" title="API 请求示例"></a>API 请求示例</h2><h3 id="curl-s-X-POST-H-Content-Type-application-json-d-model-llama2-prompt-你好-http-localhost-11434-api-generate"><a href="#curl-s-X-POST-H-Content-Type-application-json-d-model-llama2-prompt-你好-http-localhost-11434-api-generate" class="headerlink" title="curl -s -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;model&quot;: &quot;llama2&quot;, &quot;prompt&quot;: &quot;你好&quot;}&#39; http://localhost:11434/api/generate"></a><code>curl -s -X POST -H &quot;Content-Type: application/json&quot; -d &#39;&#123;&quot;model&quot;: &quot;llama2&quot;, &quot;prompt&quot;: &quot;你好&quot;&#125;&#39; http://localhost:11434/api/generate</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 作用</span><br><span class="line">使用 curl 工具向本地运行的 Ollama 服务发送 API 请求，请求指定模型生成文本。</span><br><span class="line"># 参数说明</span><br><span class="line">- -s：静默模式，不显示进度信息。</span><br><span class="line">- -X POST：指定请求方法为 POST。</span><br><span class="line">- -H &quot;Content-Type: application/json&quot;：设置请求头，表明请求体为 JSON 格式。</span><br><span class="line">- -d &#x27;&#123;&quot;model&quot;: &quot;llama2&quot;, &quot;prompt&quot;: &quot;你好&quot;&#125;&#x27;：设置请求体，指定使用的模型和输入的提示信息。</span><br><span class="line"># 示例解释</span><br><span class="line">向本地 11434 端口的 Ollama 服务发送请求，使用 llama2 模型根据“你好”这个提示信息生成文本。</span><br></pre></td></tr></table></figure>
+<h1 id="Ollama-Tips"><a href="#Ollama-Tips" class="headerlink" title="Ollama Tips"></a>Ollama Tips</h1><h2 id="模型放在-C-Users-Administrator-ollama-models"><a href="#模型放在-C-Users-Administrator-ollama-models" class="headerlink" title="模型放在 C:\Users\Administrator.ollama\models"></a>模型放在 C:\Users\Administrator.ollama\models</h2>
       
 
       
@@ -201,6 +211,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大模型</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -398,6 +419,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">前端学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大模型</a>
               </li>
             
             <div class="clearfix"></div>
