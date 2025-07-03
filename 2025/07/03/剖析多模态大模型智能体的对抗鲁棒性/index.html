@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: 前端学习 | Bubulu Blog</title>
+  <title>剖析多模态大模型智能体的对抗鲁棒性 | Bubulu Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bubulu Blog">
-<meta property="og:url" content="http://example.com/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/index.html">
+  <meta name="description" content="《多模态 LM 智能体的对抗鲁棒性分析及评估框架》以下是《Dissecting Adversarial Robustness of Multimodal LM Agents》一文的内容翻译与结构梳理，结合核心研究目标、方法、结果及结论展github仓库：https:&#x2F;&#x2F;github.com&#x2F;ChenWu98&#x2F;agent-attack 一、研究背景与目标 背景 随着大语言模型（LLMs）用于构建自主">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剖析多模态大模型智能体的对抗鲁棒性">
+<meta property="og:url" content="http://example.com/2025/07/03/%E5%89%96%E6%9E%90%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%99%BA%E8%83%BD%E4%BD%93%E7%9A%84%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/index.html">
 <meta property="og:site_name" content="Bubulu Blog">
+<meta property="og:description" content="《多模态 LM 智能体的对抗鲁棒性分析及评估框架》以下是《Dissecting Adversarial Robustness of Multimodal LM Agents》一文的内容翻译与结构梳理，结合核心研究目标、方法、结果及结论展github仓库：https:&#x2F;&#x2F;github.com&#x2F;ChenWu98&#x2F;agent-attack 一、研究背景与目标 背景 随着大语言模型（LLMs）用于构建自主">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-03T08:26:31.000Z">
+<meta property="article:modified_time" content="2025-07-03T08:31:51.498Z">
 <meta property="article:author" content="Bubulu">
+<meta property="article:tag" content="实验室;多模态;智能体">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Bubulu Blog" type="application/atom+xml">
@@ -150,60 +155,298 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-剖析多模态大模型智能体的对抗鲁棒性" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/07/22/weixin-apps-by-uni-app/" class="archive-article-date">
-  	<time datetime="2024-07-22T07:46:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-07-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/07/22/weixin-apps-by-uni-app/">weixin apps by uni-app</a>
+    <h1 class="article-title" itemprop="name">
+      剖析多模态大模型智能体的对抗鲁棒性
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2025/07/03/%E5%89%96%E6%9E%90%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%99%BA%E8%83%BD%E4%BD%93%E7%9A%84%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/" class="archive-article-date">
+  	<time datetime="2025-07-03T08:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="《多模态-LM-智能体的对抗鲁棒性分析及评估框架》"><a href="#《多模态-LM-智能体的对抗鲁棒性分析及评估框架》" class="headerlink" title="《多模态 LM 智能体的对抗鲁棒性分析及评估框架》"></a>《多模态 LM 智能体的对抗鲁棒性分析及评估框架》</h1><p>以下是《Dissecting Adversarial Robustness of Multimodal LM Agents》一文的内容翻译与结构梳理，结合核心研究目标、方法、结果及结论展<br>github仓库：<a target="_blank" rel="noopener" href="https://github.com/ChenWu98/agent-attack">https://github.com/ChenWu98/agent-attack</a></p>
+<h3 id="一、研究背景与目标"><a href="#一、研究背景与目标" class="headerlink" title="一、研究背景与目标"></a><strong>一、研究背景与目标</strong></h3><ol>
+<li><p><strong>背景</strong></p>
+<p>随着大语言模型（LLMs）用于构建自主智能体（如网页交互、物理世界操作），其对抗鲁棒性成为关键挑战。与聊天机器人不同，智能体是多组件复合系统，现有 LLM 安全评估无法覆盖其复杂攻击面。</p>
+</li>
+<li><p><strong>目标</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>分析多模态 LM 智能体在真实环境中的对抗鲁棒性。</p>
+</li>
+<li><p>提出评估框架，揭示攻击如何通过智能体组件传播。</p>
+</li>
+<li><p>验证现有智能体（包括反射、树搜索等先进架构）的脆弱性，并探索防御思路。</p>
+</li>
+</ul>
+<h3 id="二、核心方法与框架"><a href="#二、核心方法与框架" class="headerlink" title="二、核心方法与框架"></a><strong>二、核心方法与框架</strong></h3><ol>
+<li><p><strong>实验环境：VWA-Adv</strong></p>
+<p>在 VisualWebArena（网页智能体环境）基础上，构建包含 200 个 adversarial 任务的扩展集，模拟真实攻击场景（如篡改商品图像 &#x2F; 文本），定义 “良性成功率（Benign SR）” 和 “攻击成功率（ASR）” 作为评估指标。</p>
+</li>
+<li><p><strong>Agent Robustness Evaluation（ARE）框架</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>将智能体建模为<strong>有向图</strong>：节点为组件（环境、策略模型、评估器等），边表示信息流向及 “对抗影响力（AdvIn）”，用边权重 λ 量化攻击传播强度。</p>
+</li>
+<li><p>核心价值：分解攻击成功率，定位脆弱组件，比较不同智能体架构的鲁棒性差异。</p>
+</li>
+</ul>
+<h3 id="三、智能体类型与架构"><a href="#三、智能体类型与架构" class="headerlink" title="三、智能体类型与架构"></a><strong>三、智能体类型与架构</strong></h3><p>文中聚焦 4 类典型智能体，基于组件构成差异建模为不同图结构：</p>
+<ol>
+<li><p><strong>基础智能体（Base Agent）</strong>：仅含策略模型，直接接收环境的图像和文本输入。</p>
+</li>
+<li><p><strong>字幕增强型智能体</strong>：策略模型 + 字幕生成器（将图像转为文本，辅助决策）。</p>
+</li>
+<li><p><strong>反射智能体（Reflexion Agent）</strong>：策略模型 + 评估器（评估轨迹并生成反思，支持二次尝试）。</p>
+</li>
+<li><p><strong>树搜索智能体</strong>：策略模型 + 价值函数（策略生成候选动作，价值函数评分并选择最优）。</p>
+</li>
+</ol>
+<h3 id="四、攻击方式与实验结果"><a href="#四、攻击方式与实验结果" class="headerlink" title="四、攻击方式与实验结果"></a><strong>四、攻击方式与实验结果</strong></h3><p>针对不同智能体组件和访问权限（文本 &#x2F; 图像），设计多种攻击，核心结果如下：</p>
+<ol>
+<li><strong>文本注入攻击</strong></li>
+</ol>
+<ul>
+<li><p>场景：攻击者可修改环境文本（如商品描述）。</p>
+</li>
+<li><p>效果：对 GPT-4o 策略模型的 ASR 达 40%，可覆盖视觉输入的影响。</p>
+</li>
+</ul>
+<ol>
+<li><strong>字幕生成器攻击（白盒图像攻击）</strong></li>
+</ol>
+<ul>
+<li><p>场景：针对带白盒字幕生成器的智能体，篡改图像使字幕生成器输出对抗性文本。</p>
+</li>
+<li><p>效果：ASR&#x3D;31%，92% 的字幕含对抗信息（λ&#x3D;0.92），揭示 “字幕生成器提升性能但引入风险” 的权衡。</p>
+</li>
+</ul>
+<ol>
+<li><strong>CLIP 攻击（黑盒图像攻击）</strong></li>
+</ol>
+<ul>
+<li><p>场景：针对无白盒字幕生成器的智能体，通过优化图像扰动（&lt;5% 像素），利用 CLIP 与黑盒 LM 的迁移性实施攻击。</p>
+</li>
+<li><p>效果：自字幕智能体 ASR&#x3D;19%，基础智能体 ASR&#x3D;10%（因需从触发图像迁移至完整截图，难度更高）。</p>
+</li>
+</ul>
+<ol>
+<li><strong>评估器攻击（反射智能体）</strong></li>
+</ol>
+<ul>
+<li><p>场景：攻击评估器使其接受对抗动作、生成恶意反思。</p>
+</li>
+<li><p>效果：单独攻击 ASR&#x3D;8%；联合攻击策略模型时，ASR 从 31% 升至 36%。</p>
+</li>
+</ul>
+<ol>
+<li><strong>价值函数攻击（树搜索智能体）</strong></li>
+</ol>
+<ul>
+<li><p>场景：攻击价值函数使其对恶意动作打高分。</p>
+</li>
+<li><p>效果：单独攻击 ASR&#x3D;8%；联合攻击时，ASR 从 31% 升至 38%。</p>
+</li>
+</ul>
+<h3 id="五、防御策略与局限性"><a href="#五、防御策略与局限性" class="headerlink" title="五、防御策略与局限性"></a><strong>五、防御策略与局限性</strong></h3><ol>
+<li><strong>防御尝试</strong></li>
+</ol>
+<ul>
+<li><p>系统提示词：无效，无法提升鲁棒性。</p>
+</li>
+<li><p>释义防御：将不可信文本释义，ASR 从 31% 降至 27.5%，效果有限。</p>
+</li>
+<li><p>显式一致性检查：逐图生成字幕并校验，ASR 近零，但 API 调用成本高，且组件本身可能被攻击（上限 38%）。</p>
+</li>
+</ul>
+<ol>
+<li><strong>局限性</strong></li>
+</ol>
+<ul>
+<li><p>攻击仅验证了网页环境，未扩展至操作系统等场景。</p>
+</li>
+<li><p>未覆盖新兴智能体算法，鲁棒性需持续跟踪。</p>
+</li>
+</ul>
+<h3 id="六、结论与意义"><a href="#六、结论与意义" class="headerlink" title="六、结论与意义"></a><strong>六、结论与意义</strong></h3><ol>
+<li><p>现有先进智能体（包括 GPT-4o 驱动的反射 &#x2F; 树搜索智能体）易受攻击，单图扰动即可实现 67% 的 ASR。</p>
+</li>
+<li><p>新增组件（评估器、价值函数）在未被攻击时提升鲁棒性，但被攻击后反而增加脆弱性。</p>
+</li>
+<li><p>提出的 ARE 框架为分析智能体系统级鲁棒性提供了工具，呼吁更强防御机制的研发。</p>
+</li>
+</ol>
+<h3 id="PPT-结构建议"><a href="#PPT-结构建议" class="headerlink" title="PPT 结构建议"></a><strong>PPT 结构建议</strong></h3><ol>
+<li><p>标题页 + 研究背景（1-2 页）</p>
+</li>
+<li><p>核心方法（VWA-Adv + ARE 框架，2-3 页）</p>
+</li>
+<li><p>智能体架构与攻击方式（结合图示，3-4 页）</p>
+</li>
+<li><p>关键结果与分析（对比不同攻击效果，2-3 页）</p>
+</li>
+<li><p>防御与局限（1-2 页）</p>
+</li>
+<li><p>结论与未来方向（1 页）</p>
+</li>
+</ol>
+<p>可重点突出 “组件 - 攻击 - 鲁棒性” 的关联，用图表（如图 4、5、6）直观展示攻击成功率差异。</p>
+<blockquote>
+<p>（注：文档部分内容可能由 AI 生成）</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">实验室;多模态;智能体</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/07/03/%E5%89%96%E6%9E%90%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%99%BA%E8%83%BD%E4%BD%93%E7%9A%84%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2025/04/01/%E7%93%A6%E7%BD%97%E5%85%B0%E7%89%B9%E7%BB%83%E6%9E%AA%E6%8C%87%E5%8D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">瓦罗兰特练枪指南</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +469,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
