@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Bubulu Blog</title>
+  <title>CNN、RNN、Clip 概念 | Bubulu Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bubulu Blog">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+  <meta name="description" content="深度学习模型详解：CNN、DNN、Transformer 与大语言&#x2F;视觉语言模型（LLM&#x2F;VLM）在深度学习领域，CNN、DNN、Transformer 是核心基础架构，而 LLM（大语言模型）、CLIP、BLIP 等则是基于这些架构发展出的任务专用型模型（尤其是聚焦语言或跨模态任务）。本文将从“基础架构→专用模型”的逻辑，详细拆解各模型的定义、原理、应用场景，并梳理它们之间的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CNN、RNN、Clip 概念">
+<meta property="og:url" content="http://example.com/2025/09/26/CNN%E3%80%81RNN%E3%80%81Clip-%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="Bubulu Blog">
+<meta property="og:description" content="深度学习模型详解：CNN、DNN、Transformer 与大语言&#x2F;视觉语言模型（LLM&#x2F;VLM）在深度学习领域，CNN、DNN、Transformer 是核心基础架构，而 LLM（大语言模型）、CLIP、BLIP 等则是基于这些架构发展出的任务专用型模型（尤其是聚焦语言或跨模态任务）。本文将从“基础架构→专用模型”的逻辑，详细拆解各模型的定义、原理、应用场景，并梳理它们之间的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-25T16:20:09.000Z">
+<meta property="article:modified_time" content="2025-09-25T16:23:27.101Z">
 <meta property="article:author" content="Bubulu">
+<meta property="article:tag" content="深度学习；卷积神经网络；概念">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Bubulu Blog" type="application/atom+xml">
@@ -150,117 +155,455 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CNN、RNN、Clip-概念" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/06/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2024-06-05T12:05:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/06/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">机器学习实验报告</a>
+    <h1 class="article-title" itemprop="name">
+      CNN、RNN、Clip 概念
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2025/09/26/CNN%E3%80%81RNN%E3%80%81Clip-%E6%A6%82%E5%BF%B5/" class="archive-article-date">
+  	<time datetime="2025-09-25T16:20:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="深度学习模型详解：CNN、DNN、Transformer-与大语言-视觉语言模型（LLM-VLM）"><a href="#深度学习模型详解：CNN、DNN、Transformer-与大语言-视觉语言模型（LLM-VLM）" class="headerlink" title="深度学习模型详解：CNN、DNN、Transformer 与大语言&#x2F;视觉语言模型（LLM&#x2F;VLM）"></a>深度学习模型详解：CNN、DNN、Transformer 与大语言&#x2F;视觉语言模型（LLM&#x2F;VLM）</h1><p>在深度学习领域，CNN、DNN、Transformer 是核心基础架构，而 LLM（大语言模型）、CLIP、BLIP 等则是基于这些架构发展出的<strong>任务专用型模型</strong>（尤其是聚焦语言或跨模态任务）。本文将从“基础架构→专用模型”的逻辑，详细拆解各模型的定义、原理、应用场景，并梳理它们之间的联系，同时结合实例帮助理解。</p>
+<h2 id="一、基础深度学习架构：DNN、CNN、Transformer"><a href="#一、基础深度学习架构：DNN、CNN、Transformer" class="headerlink" title="一、基础深度学习架构：DNN、CNN、Transformer"></a>一、基础深度学习架构：DNN、CNN、Transformer</h2><p>基础架构是构建复杂模型（如 LLM、VLM）的“骨架”，它们定义了数据在模型中的<strong>传播与计算方式</strong>，核心差异在于对“数据结构”的适配性（如序列数据、网格数据）。</p>
+<h3 id="1-DNN（深度神经网络，Deep-Neural-Network）"><a href="#1-DNN（深度神经网络，Deep-Neural-Network）" class="headerlink" title="1. DNN（深度神经网络，Deep Neural Network）"></a>1. DNN（深度神经网络，Deep Neural Network）</h3><p>DNN 是<strong>所有深度模型的“通用雏形”</strong>，本质是“多层全连接神经网络”，通过堆叠“输入层-隐藏层-输出层”实现对复杂非线性关系的拟合。</p>
+<h4 id="核心原理"><a href="#核心原理" class="headerlink" title="核心原理"></a>核心原理</h4><ul>
+<li><strong>全连接结构</strong>：隐藏层的每个神经元与前一层的<strong>所有神经元直接连接</strong>，每个连接对应一个权重（参数），通过反向传播优化权重以降低预测误差。</li>
+<li><strong>激活函数</strong>：引入 ReLU、Sigmoid 等激活函数，打破线性映射限制，使模型能学习复杂模式（如“图像中是否有猫”“句子是否为正面情绪”）。</li>
+</ul>
+<h4 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h4><ul>
+<li><strong>参数爆炸</strong>：若输入维度高（如 224×224 图像展开为 50176 维向量），全连接层的参数数量会急剧增加（例如隐藏层 1000 个神经元时，参数数为 50176×1000&#x3D;5e7），导致模型训练困难、过拟合。</li>
+<li><strong>忽略空间&#x2F;序列结构</strong>：将输入数据（如图像、句子）展开为一维向量，丢失了关键的空间关联（如图像中“像素相邻关系”）或序列关联（如句子中“词的先后顺序”）。</li>
+</ul>
+<h4 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h4><ul>
+<li>简单的结构化数据任务（如表格数据的分类&#x2F;回归，例如“根据年龄、收入预测用户是否购买商品”）。</li>
+<li>作为早期简单模型的基础（如 2012 年之前的图像分类模型）。</li>
+</ul>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><ul>
+<li>手写数字识别（MNIST 数据集）：输入为 28×28 展开的 784 维向量，通过 2-3 层全连接隐藏层，输出 10 个数字的概率。</li>
+</ul>
+<h3 id="2-CNN（卷积神经网络，Convolutional-Neural-Network）"><a href="#2-CNN（卷积神经网络，Convolutional-Neural-Network）" class="headerlink" title="2. CNN（卷积神经网络，Convolutional Neural Network）"></a>2. CNN（卷积神经网络，Convolutional Neural Network）</h3><p>CNN 是为<strong>网格结构数据（如图像、视频帧）设计的专用架构</strong>，核心解决 DNN 的“参数爆炸”和“空间结构丢失”问题，目前仍是计算机视觉（CV）领域的基础。</p>
+<h4 id="核心原理（三大关键操作）"><a href="#核心原理（三大关键操作）" class="headerlink" title="核心原理（三大关键操作）"></a>核心原理（三大关键操作）</h4><ol>
+<li><strong>卷积层（Convolution Layer）</strong>：<ul>
+<li>用“卷积核（Filter）”（如 3×3 大小）在图像上滑动，计算局部像素的加权和，提取<strong>局部特征</strong>（如边缘、纹理、角点）。</li>
+<li>优势：参数共享（一个卷积核在全图复用，减少参数）、局部感知（只关注相邻像素，保留空间关联）。</li>
+</ul>
+</li>
+<li><strong>池化层（Pooling Layer）</strong>：<ul>
+<li>对卷积层输出的“特征图（Feature Map）”进行下采样（如最大池化、平均池化），减少特征图尺寸，降低计算量，同时增强模型对微小位移的鲁棒性（如“猫的位置偏移一点仍能识别”）。</li>
+</ul>
+</li>
+<li><strong>全连接层（Fully Connected Layer）</strong>：<ul>
+<li>在模型末尾，将池化层输出的高维特征图展开为一维向量，通过全连接层映射到任务输出（如分类任务的类别概率）。</li>
+</ul>
+</li>
+</ol>
+<h4 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h4><ul>
+<li><strong>层级特征提取</strong>：浅层卷积提取“低级特征”（边缘、纹理），深层卷积组合低级特征为“高级特征”（如眼睛、鼻子→最终的“猫”）。</li>
+<li><strong>平移不变性</strong>：同一物体在图像中位置不同，卷积核仍能提取到相同特征，无需重新学习。</li>
+</ul>
+<h4 id="典型应用-1"><a href="#典型应用-1" class="headerlink" title="典型应用"></a>典型应用</h4><ul>
+<li>图像分类（如识别猫&#x2F;狗、手写数字）、目标检测（如检测图像中的人、车）、图像分割（如区分医学影像中的肿瘤与正常组织）、图像生成（如风格迁移）。</li>
+</ul>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><ul>
+<li><strong>LeNet-5</strong>（1998 年，CNN 鼻祖）：用于 MNIST 手写数字识别，包含 2 个卷积层、2 个池化层、2 个全连接层。</li>
+<li><strong>ResNet-50</strong>（2015 年，解决深层模型退化问题）：通过“残差连接”实现 50 层深度，至今仍是图像分类、特征提取的常用 backbone（基础架构）。</li>
+</ul>
+<h3 id="3-Transformer（转换器）"><a href="#3-Transformer（转换器）" class="headerlink" title="3. Transformer（转换器）"></a>3. Transformer（转换器）</h3><p>Transformer 是 2017 年由 Google 提出的<strong>基于“自注意力机制（Self-Attention）”的架构</strong>，最初为解决“序列数据（如文本）的长距离依赖”设计，目前已成为 NLP（自然语言处理）、CV 甚至跨模态任务的“通用架构”（LLM、VLM 均基于 Transformer 构建）。</p>
+<h4 id="核心原理（两大核心模块）"><a href="#核心原理（两大核心模块）" class="headerlink" title="核心原理（两大核心模块）"></a>核心原理（两大核心模块）</h4><ol>
+<li><strong>自注意力机制（Self-Attention）</strong>：<ul>
+<li>核心思想：计算序列中<strong>每个元素与其他所有元素的关联程度（注意力权重）</strong>，让模型聚焦于对当前任务更重要的元素。</li>
+<li>计算逻辑：对每个输入元素（如文本中的词）生成 Query（查询）、Key（键）、Value（值）三个向量，通过 Query 与 Key 的相似度计算注意力权重，再用权重对 Value 加权求和，得到“注意力特征”。</li>
+<li>优势：解决 RNN（循环神经网络）的“长距离依赖”问题（如文本中“前面提到的‘小明’与后面‘他’的关联”），且支持并行计算（RNN 需逐元素处理，Transformer 可同时处理所有元素）。</li>
+</ul>
+</li>
+<li><strong>编码器-解码器（Encoder-Decoder）结构</strong>：<ul>
+<li><strong>编码器（Encoder）</strong>：接收输入序列（如“英文句子”），通过多层自注意力+前馈网络，输出“上下文特征表示”（包含序列中所有元素的关联信息）。</li>
+<li><strong>解码器（Decoder）</strong>：接收编码器的特征+已生成的输出序列（如“部分中文翻译”），通过“掩码自注意力”（避免提前看到未来元素）和“交叉注意力”（关注编码器的输入特征），生成完整输出序列。</li>
+</ul>
+</li>
+</ol>
+<h4 id="关键变种"><a href="#关键变种" class="headerlink" title="关键变种"></a>关键变种</h4><ul>
+<li><strong>仅编码器架构</strong>：适用于“理解类任务”（如文本分类、情感分析），代表为 BERT（双向编码器）。</li>
+<li><strong>仅解码器架构</strong>：适用于“生成类任务”（如文本生成、翻译），代表为 GPT（生成式预训练转换器）。</li>
+<li><strong>编码器-解码器架构</strong>：适用于“序列到序列任务”（如机器翻译、文本摘要），代表为 T5。</li>
+</ul>
+<h4 id="典型应用-2"><a href="#典型应用-2" class="headerlink" title="典型应用"></a>典型应用</h4><ul>
+<li>NLP：文本分类、机器翻译、问答系统、文本生成。</li>
+<li>CV：图像分类（ViT，Vision Transformer）、目标检测（DETR）。</li>
+<li>跨模态：图文检索、图像描述生成（CLIP、BLIP 基于此）。</li>
+</ul>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><ul>
+<li><strong>BERT-base</strong>：12 层编码器，用于文本理解任务（如“判断句子是否为同义句”）。</li>
+<li><strong>GPT-3</strong>：1750 亿参数，仅解码器架构，支持高质量文本生成（如写文章、代码）。</li>
+<li><strong>ViT（Vision Transformer）</strong>：将图像分割为 16×16 的“图像块（Patch）”，视为序列输入 Transformer 编码器，实现高精度图像分类。</li>
+</ul>
+<h2 id="二、专用模型：LLM、CLIP、BLIP（基于基础架构的任务延伸）"><a href="#二、专用模型：LLM、CLIP、BLIP（基于基础架构的任务延伸）" class="headerlink" title="二、专用模型：LLM、CLIP、BLIP（基于基础架构的任务延伸）"></a>二、专用模型：LLM、CLIP、BLIP（基于基础架构的任务延伸）</h2><p>上述基础架构（尤其是 Transformer）为复杂任务提供了“骨架”，而 LLM、CLIP、BLIP 则是在骨架上填充“任务专用数据与训练目标”，形成的<strong>端到端解决方案</strong>。其中：</p>
+<ul>
+<li>LLM 聚焦“纯语言任务”，是<strong>语言领域的专用大模型</strong>；</li>
+<li>CLIP、BLIP 聚焦“图像-语言跨模态任务”，属于<strong>VLM（视觉语言模型，Vision-Language Model）</strong>。</li>
+</ul>
+<h3 id="1-LLM（大语言模型，Large-Language-Model）"><a href="#1-LLM（大语言模型，Large-Language-Model）" class="headerlink" title="1. LLM（大语言模型，Large Language Model）"></a>1. LLM（大语言模型，Large Language Model）</h3><p>LLM 是<strong>基于 Transformer（多为仅解码器架构）构建、专注于语言任务的大参数模型</strong>，核心能力是“理解与生成人类语言”，通过“海量文本预训练+任务微调”实现通用语言能力。</p>
+<h4 id="核心定义与原理"><a href="#核心定义与原理" class="headerlink" title="核心定义与原理"></a>核心定义与原理</h4><ul>
+<li><strong>“大”的核心</strong>：<ol>
+<li>参数量大（通常数十亿至万亿级，如 GPT-3 1750 亿、GPT-4 约万亿级）；</li>
+<li>训练数据量大（基于互联网海量文本，如书籍、网页、论文，覆盖多种语言与领域）。</li>
+</ol>
+</li>
+<li><strong>训练流程</strong>：<ol>
+<li><strong>预训练（Pre-training）</strong>：在海量无标注文本上学习“语言规律”（如语法、语义、常识），目标是“根据前文预测下一个词”（如输入“今天天气很”，预测下一个词是“好”）。</li>
+<li><strong>微调（Fine-tuning）</strong>：在特定任务的标注数据上（如问答、翻译）调整参数，使模型适配具体任务。</li>
+</ol>
+</li>
+<li><strong>核心架构</strong>：几乎全部基于 Transformer 仅解码器架构（如 GPT 系列），少数基于编码器-解码器（如 T5），原因是“仅解码器更适合生成式任务，符合人类对语言模型的核心需求（如写文本、对话）”。</li>
+</ul>
+<h4 id="关键能力"><a href="#关键能力" class="headerlink" title="关键能力"></a>关键能力</h4><ul>
+<li>语言理解：情感分析、文本分类、问答、常识推理。</li>
+<li>语言生成：写文章、代码、诗歌、对话（如 ChatGPT）、机器翻译。</li>
+</ul>
+<h4 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h4><table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>参数量</th>
+<th>架构</th>
+<th>核心能力与应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GPT-3</td>
+<td>1750亿</td>
+<td>仅解码器</td>
+<td>文本生成、代码生成、简单推理（如“计算 2+3”）</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td>基于GPT-3.5微调</td>
+<td>仅解码器</td>
+<td>对话交互（如聊天、答疑）、任务助手（如写邮件、改作文）</td>
+</tr>
+<tr>
+<td>LLaMA-2</td>
+<td>70亿&#x2F;130亿&#x2F;700亿</td>
+<td>仅解码器</td>
+<td>开源LLM，支持多语言对话、文本生成，适合本地化部署</td>
+</tr>
+<tr>
+<td>文心一言</td>
+<td>未知（百亿-千亿级）</td>
+<td>编码器-解码器</td>
+<td>中文优先，支持对话、文本生成、多模态理解（如识别图像）</td>
+</tr>
+</tbody></table>
+<h3 id="2-CLIP（Contrastive-Language-Image-Pre-training，对比语言-图像预训练）"><a href="#2-CLIP（Contrastive-Language-Image-Pre-training，对比语言-图像预训练）" class="headerlink" title="2. CLIP（Contrastive Language-Image Pre-training，对比语言-图像预训练）"></a>2. CLIP（Contrastive Language-Image Pre-training，对比语言-图像预训练）</h3><p>CLIP 是 OpenAI 2021 年提出的<strong>跨模态基础模型（VLM）</strong>，核心目标是“建立图像与文本的通用关联”，实现“零样本（Zero-shot）跨模态任务”（无需任务微调即可直接使用）。</p>
+<h4 id="核心定义与原理-1"><a href="#核心定义与原理-1" class="headerlink" title="核心定义与原理"></a>核心定义与原理</h4><ul>
+<li><strong>架构基础</strong>：双编码器结构（分别处理图像和文本，均基于 Transformer）：<ol>
+<li><strong>图像编码器</strong>：可选 CNN（如 ResNet）或 Transformer（如 ViT），将图像转换为“图像特征向量”。</li>
+<li><strong>文本编码器</strong>：基于 Transformer 编码器（如 BERT 简化版），将文本（如“一只猫坐在沙发上”）转换为“文本特征向量”。</li>
+</ol>
+</li>
+<li><strong>训练目标（对比学习）</strong>：<ul>
+<li>输入“图像-文本对”（如“猫的图片”+“一只猫”），让模型学习“匹配的图文对特征向量更相似，不匹配的更疏远”。</li>
+<li>具体做法：将 N 个图像和 N 个文本组成 N×N 的矩阵，训练模型让“对角线（匹配对）的相似度最高，非对角线（不匹配对）的相似度最低”。</li>
+</ul>
+</li>
+</ul>
+<h4 id="关键能力（零样本优势）"><a href="#关键能力（零样本优势）" class="headerlink" title="关键能力（零样本优势）"></a>关键能力（零样本优势）</h4><ul>
+<li>零样本图像分类：无需训练数据，直接用文本描述类别（如“狗”“猫”“汽车”），模型通过对比图文特征判断图像属于哪一类。</li>
+<li>图文检索：输入文本（如“红色的日落”），检索最匹配的图像；或输入图像，检索最匹配的文本描述。</li>
+<li>跨模态特征对齐：为后续 VLM（如 BLIP、Stable Diffusion）提供“图文特征关联”的基础。</li>
+</ul>
+<h4 id="局限性-1"><a href="#局限性-1" class="headerlink" title="局限性"></a>局限性</h4><ul>
+<li>不支持“图像描述生成”（如输入图像输出文本），仅能做“特征对比与检索”，属于“判别式”模型，非“生成式”模型。</li>
+<li>零样本分类精度虽高，但在细分领域（如医学影像）仍不如专用微调模型。</li>
+</ul>
+<h4 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h4><ul>
+<li>零样本识别动物：输入一张“熊猫”图片，同时输入文本列表 [“熊猫”, “老虎”, “狮子”]，CLIP 会计算图像特征与每个文本特征的相似度，最终输出“熊猫”为最高概率类别。</li>
+<li>图文检索：在 10 万张图像库中，输入文本“戴着帽子的小女孩”，CLIP 能快速返回最匹配的几张图像。</li>
+</ul>
+<h3 id="3-BLIP（Bootstrapping-Language-Image-Pre-training，引导式语言-图像预训练）"><a href="#3-BLIP（Bootstrapping-Language-Image-Pre-training，引导式语言-图像预训练）" class="headerlink" title="3. BLIP（Bootstrapping Language-Image Pre-training，引导式语言-图像预训练）"></a>3. BLIP（Bootstrapping Language-Image Pre-training，引导式语言-图像预训练）</h3><p>BLIP 是 Salesforce 2022 年提出的<strong>生成式 VLM</strong>，在 CLIP 的“图文特征对齐”基础上，进一步增强了“生成式能力”（如图像描述、视觉问答），同时支持判别式任务（如图文检索）。</p>
+<h4 id="核心定义与原理-2"><a href="#核心定义与原理-2" class="headerlink" title="核心定义与原理"></a>核心定义与原理</h4><ul>
+<li><strong>架构基础</strong>：编码器-解码器+单编码器双用（灵活适配不同任务）：<ol>
+<li><strong>图像编码器</strong>：基于 ViT（Vision Transformer），提取图像特征。</li>
+<li><strong>文本编码器&#x2F;解码器</strong>：基于 Transformer，可切换为“编码器模式”（处理判别式任务，如图文检索）或“解码器模式”（处理生成式任务，如图像描述）。</li>
+</ol>
+</li>
+<li><strong>训练目标（多任务引导）</strong>：<ol>
+<li><strong>对比学习（延续 CLIP）</strong>：对齐图文特征，优化图文检索任务。</li>
+<li><strong>图像文本匹配（ITM）</strong>：判断“图像-文本对是否匹配”（如“猫的图片”+“一只狗”为不匹配），增强图文关联理解。</li>
+<li><strong>文本生成（ITC）</strong>：输入图像，生成对应的文本描述（如“一只黑色的猫趴在窗台上”），训练生成式能力。</li>
+</ol>
+</li>
+<li><strong>核心创新：Bootstrapping（自引导）</strong>：<ul>
+<li>用模型自身生成的“伪标签”（如对图像生成多个文本描述）扩充训练数据，解决“高质量图文标注数据稀缺”的问题，提升模型泛化能力。</li>
+</ul>
+</li>
+</ul>
+<h4 id="关键能力（兼顾判别与生成）"><a href="#关键能力（兼顾判别与生成）" class="headerlink" title="关键能力（兼顾判别与生成）"></a>关键能力（兼顾判别与生成）</h4><ul>
+<li>生成式任务：图像描述（Image Captioning）、视觉问答（VQA，如输入图像+问题“图中有几只狗”，输出答案“2只”）、图文对话（如输入图像+“这是什么动物”，输出“这是一只熊猫”）。</li>
+<li>判别式任务：图文检索、图文匹配判断。</li>
+</ul>
+<h4 id="与-CLIP-的核心差异"><a href="#与-CLIP-的核心差异" class="headerlink" title="与 CLIP 的核心差异"></a>与 CLIP 的核心差异</h4><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>CLIP</th>
+<th>BLIP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>核心任务</td>
+<td>判别式（检索、分类）</td>
+<td>判别式+生成式（检索+描述+VQA）</td>
+</tr>
+<tr>
+<td>架构</td>
+<td>双编码器（独立处理图文）</td>
+<td>编码器-解码器（共享特征，支持生成）</td>
+</tr>
+<tr>
+<td>训练目标</td>
+<td>仅对比学习</td>
+<td>对比学习+ITM+文本生成</td>
+</tr>
+<tr>
+<td>生成能力</td>
+<td>无</td>
+<td>支持图像描述、VQA等</td>
+</tr>
+</tbody></table>
+<h4 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h4><ul>
+<li>图像描述：输入一张“孩子在公园放风筝”的图片，BLIP 输出文本“一个小男孩在绿色的草地上放风筝，天空中有白云”。</li>
+<li>视觉问答：输入同一张图片+问题“孩子在什么地方放风筝”，BLIP 输出答案“公园的草地上”。</li>
+</ul>
+<h2 id="三、各模型之间的联系与层级关系"><a href="#三、各模型之间的联系与层级关系" class="headerlink" title="三、各模型之间的联系与层级关系"></a>三、各模型之间的联系与层级关系</h2><p>所有模型并非孤立存在，而是呈现“基础架构→专用模型”的层级依赖关系，且跨模态模型（CLIP、BLIP）进一步融合了语言与视觉能力。</p>
+<h3 id="1-层级依赖关系（从底层到上层）"><a href="#1-层级依赖关系（从底层到上层）" class="headerlink" title="1. 层级依赖关系（从底层到上层）"></a>1. 层级依赖关系（从底层到上层）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[DNN（全连接基础）] --&gt; B[CNN（适配网格数据，CV基础）]</span><br><span class="line">    A --&gt; C[Transformer（适配序列/网格，通用架构）]</span><br><span class="line">    C --&gt; D[LLM（仅语言，如GPT）]</span><br><span class="line">    B --&gt; E[VLM的图像分支（如CLIP的ResNet）]</span><br><span class="line">    C --&gt; F[VLM的图文分支（如CLIP的ViT/文本编码器）]</span><br><span class="line">    E &amp; F --&gt; G[CLIP（双编码器，图文对齐）]</span><br><span class="line">    G --&gt; H[BLIP（编码器-解码器，生成式VLM）]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>底层：DNN</strong>：是 CNN、Transformer 的“祖先”，全连接层是所有模型的基础组件（如 CNN 末尾的全连接层、Transformer 的前馈网络）。</li>
+<li><strong>中层：CNN + Transformer</strong>：<ul>
+<li>CNN 是传统 CV 任务的核心，为 VLM 提供图像特征提取能力（如 CLIP 的 ResNet 图像编码器）。</li>
+<li>Transformer 是“通用架构”，既支撑 LLM（仅解码器），也支撑 VLM 的文本编码器和图像编码器（如 ViT）。</li>
+</ul>
+</li>
+<li><strong>上层：LLM + VLM</strong>：<ul>
+<li>LLM 是 Transformer 在“纯语言领域”的极致应用，专注语言理解与生成。</li>
+<li>VLM（CLIP、BLIP）是 Transformer&#x2F;CNN 在“跨模态领域”的应用，融合图像与语言能力，其中 CLIP 是基础（图文对齐），BLIP 是进阶（增加生成能力）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-核心关联总结"><a href="#2-核心关联总结" class="headerlink" title="2. 核心关联总结"></a>2. 核心关联总结</h3><ol>
+<li><strong>架构复用</strong>：LLM、CLIP、BLIP 均以 Transformer 为核心架构（CLIP 可选 CNN 图像编码器），Transformer 的自注意力机制是它们处理“长距离依赖”“跨模态关联”的关键。</li>
+<li><strong>任务扩展</strong>：<ul>
+<li>DNN&#x2F;CNN 聚焦“单模态任务”（如表格数据、图像）；</li>
+<li>Transformer 扩展到“单模态序列任务”（如文本）和“跨模态任务”；</li>
+<li>LLM 专注“语言单模态”，VLM 专注“图像-语言跨模态”。</li>
+</ul>
+</li>
+<li><strong>能力递进</strong>：<ul>
+<li>CLIP 解决“图文特征对齐”，但无生成能力；</li>
+<li>BLIP 在 CLIP 基础上增加“生成能力”，实现“理解+生成”双功能；</li>
+<li>最新 VLM（如 GPT-4V、Gemini）进一步融合 LLM 的语言能力与 VLM 的视觉能力，实现“多模态对话与推理”（如输入图像+文本，生成复杂回答）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、总结：各模型的核心定位与应用场景"><a href="#四、总结：各模型的核心定位与应用场景" class="headerlink" title="四、总结：各模型的核心定位与应用场景"></a>四、总结：各模型的核心定位与应用场景</h2><table>
+<thead>
+<tr>
+<th>模型类型</th>
+<th>核心定位</th>
+<th>关键优势</th>
+<th>典型应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DNN</td>
+<td>深度学习通用雏形</td>
+<td>结构简单，适配结构化数据</td>
+<td>表格数据分类&#x2F;回归</td>
+</tr>
+<tr>
+<td>CNN</td>
+<td>图像&#x2F;网格数据专用架构</td>
+<td>空间特征提取，参数高效</td>
+<td>图像分类、目标检测、图像分割</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>通用序列&#x2F;网格架构</td>
+<td>长距离依赖，并行计算</td>
+<td>文本生成（LLM）、图像分类（ViT）、机器翻译</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>语言专用大模型</td>
+<td>语言理解与生成能力强</td>
+<td>对话（ChatGPT）、代码生成、写文章</td>
+</tr>
+<tr>
+<td>CLIP</td>
+<td>跨模态基础模型（判别式）</td>
+<td>零样本图文检索&#x2F;分类</td>
+<td>无标注数据的图像分类、图文检索</td>
+</tr>
+<tr>
+<td>BLIP</td>
+<td>跨模态生成模型</td>
+<td>兼顾判别与生成，支持VQA</td>
+<td>图像描述、视觉问答、图文对话</td>
+</tr>
+</tbody></table>
+<p>通过以上梳理可见：从 DNN 到 Transformer，是“架构通用性”的提升；从基础架构到 LLM&#x2F;VLM，是“任务专用性”的深化。这些模型共同构成了当前深度学习在语言、视觉、跨模态领域的核心技术体系，也是 AI 应用（如 ChatGPT、AI 绘画、智能助手）的底层支撑。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">实验报告</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">深度学习；卷积神经网络；概念</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/09/26/CNN%E3%80%81RNN%E3%80%81Clip-%E6%A6%82%E5%BF%B5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2024-06-04T04:37:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2025/07/03/%E5%89%96%E6%9E%90%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%99%BA%E8%83%BD%E4%BD%93%E7%9A%84%E5%AF%B9%E6%8A%97%E9%B2%81%E6%A3%92%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剖析多模态大模型智能体的对抗鲁棒性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/06/04/hello-world/" class="archive-article-date">
-  	<time datetime="2024-06-04T04:33:14.350Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/06/04/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -284,8 +627,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
